@@ -1,5 +1,5 @@
 
-本文是 [PEP 8](https://www.python.org/dev/peps/pep-0008/)的中文版，基于 MarkDown 语法。
+本文是 [PEP 8](https://www.python.org/dev/peps/pep-0008/)的中文翻译，基于 MarkDown 语法。
 
 ## §1 简介
 
