@@ -637,7 +637,7 @@ Python 库的命名约定有点混乱，因此我们永远不会完全保持一�
 - `UPPERCASE`（大写）
 - `UPPER_CASE_WITH_UNDERSCORES`（大写带下划线）
 - `CapitalizedWords`（或 CapWords 或 CamelCase——因其字母的隆起外观而得名[^4]）。 这有时也被称为 StudlyCaps。
-   注意：在 CapWords 中使用首字母缩写词时，请使用首字母缩写词的所有字母大写。因此，HTTPServerError 比 HttpServerError 看起来更舒服，也更好。
+    注意：在 CapWords 中使用首字母缩写词时，请使用首字母缩写词的所有字母大写。因此，`HTTPServerError` 比 `HttpServerError` 看起来更舒服，也更好。
 - `mixedCase`（与上文不同的是，首字母小写！）
 - `Capitalized_Words_With_Underscores`（丑!）
 
