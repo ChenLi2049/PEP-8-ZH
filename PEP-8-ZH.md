@@ -1,11 +1,11 @@
 
-本文是 [PEP 8](https://www.python.org/dev/peps/pep-0008/) 的中文翻译，基于 `Markdown` 语法。
+本文是 [_PEP 8_](https://www.python.org/dev/peps/pep-0008/) 的中文翻译，基于 Markdown 语法。
 
 ## §1 简介
 
-本文档为主 Python 发行版中构成标准库的 Python 代码提供编码规范。请参见伴随的信息 PEP，其中描述了 [Python C实现中C代码的样式指南](https://peps.python.org/pep-0007 "PEP 7 – Style Guide for C Code")。
+本文档为主 Python 发行版中构成标准库的 Python 代码提供编码规范。请参见伴随的信息 _PEP_，其中描述了 [Python 的 C 实现中 C 代码的样式指南](https://peps.python.org/pep-0007 "PEP 7 – Style Guide for C Code")。
 
-本文档和 [PEP 257](https://peps.python.org/pep-0257 "PEP 257 – Docstring Conventions")（文档字符串约定）改编自 Guido 的原始 Python 样式指南文章，其中还加入了 Barry 的样式指南[^2]的一些内容。
+本文档和 [_PEP 257_](https://peps.python.org/pep-0257 "PEP 257 – Docstring Conventions")（文档字符串约定）改编自 Guido 的原始 Python 样式指南文章，其中还加入了 Barry 的样式指南[^2]的一些内容。
 
 随着语言本身的变化，本样式指南将随着识别出额外约定并使过时的约定失效而不断演变。
 
@@ -13,17 +13,17 @@
 
 ## §2 何时忽略本指南
 
-Guido 的一个关键洞见之一是，代码被阅读的次数比编写的次数多得多。本文档提供的指南旨在提高代码的可读性，并使其在 Python 代码的广泛范围内保持一致。正如 [PEP 20](https://peps.python.org/pep-0020 "PEP 20 – The Zen of Python") 所说，“可读性至关重要”。
+Guido 的一个关键洞见之一是，代码被阅读的次数比编写的次数多得多。本文档提供的指南旨在提高代码的可读性，并使其在 Python 代码的广泛范围内保持一致。正如 [_PEP 20_](https://peps.python.org/pep-0020 "PEP 20 – The Zen of Python") 所说，“可读性至关重要”。
 
 一篇样式指南是关于一致性的约定。遵守该样式指南保持一致性很重要。遵守项目内的一致性更为重要。遵守一个模块或功能内的一致性是最重要的。
 
 不过，也要知道何时可以不一致——有时样式指南的建议并不适用。当有疑虑时，请运用你自己的判断力。看看其他例子，并决定哪个看起来更好。随时向他人提问！
 
-特别是：不要为了遵守本 PEP 而破坏向后兼容性！
+特别是：不要为了遵守本 _PEP_ 而破坏向后兼容性！
 
 其他一些忽略样式准则的充分理由：
 
-1. 应用该指南会使代码难以阅读，即使是习惯于阅读遵循此 PEP 的代码的人。
+1. 应用该指南会使代码难以阅读，即使是习惯于阅读遵循此 _PEP_ 的代码的人。
 2. 为了与周围的代码保持一致，这些代码也违反了这些规则（可能出于历史原因），尽管这也是清理别人犯下的错误的机会（按照真正的 XP 风格）。
 3. 由于所讨论的代码早于准则的引入，因此没有其他理由修改该代码。
 4. 当代码需要与不支持样式指南推荐功能的旧版 Python 保持兼容性时。
@@ -78,7 +78,7 @@ foo = long_function_name(
   var_three, var_four)
 ```
 
-当 `if`-语句的条件部分足够长，需要跨越多行编写时，值得注意的是，使用两个字符的关键字（即 `if`），再加上一个空格和一个左括号会为后续的多行条件语句创建一个自然的4个空格缩进。这可能会产生与嵌套在 `if`-语句内部的缩进代码块产生视觉冲突，后者也会自然缩进到4个空格。本 PEP 没有对如何（或是否）进一步从视觉上区分这样的条件行和 `if`-语句内部嵌套的代码块表达明确的立场。在这种情况下，可接受的选项包括但不限于：
+当 `if`-语句的条件部分足够长，需要跨越多行编写时，值得注意的是，使用两个字符的关键字（即 `if`），再加上一个空格和一个左括号会为后续的多行条件语句创建一个自然的4个空格缩进。这可能会产生与嵌套在 `if`-语句内部的缩进代码块产生视觉冲突，后者也会自然缩进到4个空格。本 _PEP_ 没有对如何（或是否）进一步从视觉上区分这样的条件行和 `if`-语句内部嵌套的代码块表达明确的立场。在这种情况下，可接受的选项包括但不限于：
 
 ```python
 # No extra indentation.
@@ -128,13 +128,13 @@ result = some_function_that_takes_arguments(
 ```
 
 
-### §3.2 使用 tab 还是空格？
+### §3.2 使用 `tab` 还是空格？
 
 空格是首选的缩进方式。
 
-tab 应仅用于与已经用制表符缩进的代码保持一致。
+`tab` 应仅用于与已经用制表符缩进的代码保持一致。
 
-Python 不允许混合使用 tab 和空格进行缩进。
+Python 不允许混合使用 `tab` 和空格进行缩进。
 
 ### §3.3 一行代码最大的长度
 
@@ -206,7 +206,7 @@ income = (gross_wages
 
 在函数中使用空白行以分隔逻辑部分。
 
-Python 接受 ctrl-L （即^ L）换页字符作为空格；许多工具将这些字符视为页面分隔符，因此您可以使用它们来分隔您的文件中不同部分的页面。请注意，某些编辑器和基于 Web 的代码查看器可能不会将 ctrl-L 识别为换页，而是在其位置显示另一个标志符号。
+Python 接受 `ctrl-L` （即`^ L`）换页字符作为空格；许多工具将这些字符视为页面分隔符，因此您可以使用它们来分隔您的文件中不同部分的页面。请注意，某些编辑器和基于 Web 的代码查看器可能不会将 `ctrl-L` 识别为换页，而是在其位置显示另一个标志符号。
 
 ### §3.6 源文件的编码
 
@@ -220,7 +220,7 @@ Python 标准库中的所有标识符都必须使用仅 ASCII 标识符，并在
 
 ### §3.7 模块的导入
 
-- import 通常一行一个：
+- `import` 通常一行一个：
 
     ```python
     # Correct:
@@ -240,7 +240,7 @@ Python 标准库中的所有标识符都必须使用仅 ASCII 标识符，并在
     from subprocess import Popen, PIPE
     ```
 
-- import 总是放在文件的顶部，紧随任何模块注释和文档字符串之后，同时在全局变量和常量之前。
+- `import` 总是放在文件的顶部，紧随任何模块注释和文档字符串之后，同时在全局变量和常量之前。
 
     导入应按以下顺序分组：
 
@@ -287,9 +287,9 @@ Python 标准库中的所有标识符都必须使用仅 ASCII 标识符，并在
 
     以这种方式重新发布名称时，仍适用以下关于公共和内部接口的指南。
 
-### §3.8 如何使用 dunders？
+### §3.8 如何使用 `dunders`？
 
-模块级 “dunders”（即名称前后有两个下划线）如 `__all__`，`__author__`，`__version__` 等等。他们通常被放置在文档字符串之后，但在任何导入语句（除了 `__future__`）之前。Python规定未来导入必须出现在除文档字符串外的任何其他代码之前：
+模块级 `dunders`（即名称前后有两个下划线）如 `__all__`，`__author__`，`__version__` 等等。他们通常被放置在文档字符串之后，但在任何导入语句（除了 `__future__`）之前。Python 规定未来导入必须出现在除文档字符串外的任何其他代码之前：
 
 ```python
 """This is the example module.
@@ -309,9 +309,9 @@ import sys
 
 ## §4 字符串中的引号
 
-在 Python 中，单引号和双引号的字符串是相同的。这个 PEP 没有对此进行建议。选择一条规则并坚持遵循它。但是，当字符串包含单引号或双引号字符时，请使用另一个字符以避免在字符串中使用反斜杠。这会提高可读性。
+在 Python 中，单引号和双引号的字符串是相同的。本 _PEP_ 没有对此进行建议。选择一条规则并坚持遵循它。但是，当字符串包含单引号或双引号字符时，请使用另一个字符以避免在字符串中使用反斜杠。这会提高可读性。
 
-对于三引号字符串，请始终使用双引号字符以与 [PEP 257](https://peps.python.org/pep-0257 "PEP 257 – Docstring Conventions") 中的文档字符串约定一致。
+对于三引号字符串，请始终使用双引号字符以与 [_PEP 257_](https://peps.python.org/pep-0257 "PEP 257 – Docstring Conventions") 中的文档字符串约定一致。
 
 ## §5 表达式和语句中的空格
 
@@ -416,7 +416,7 @@ import sys
 
 ### §5.2 本章其他的建议
 
-- 避免任何地方都有尾随空格。因为它通常是不可见的，所以会造成困惑：例如，后面跟着一个空格和换行符的反斜杠不算作换行标记。一些编辑器不保留它，许多项目（如CPython本身）都有预提交钩子来拒绝它。
+- 避免任何地方都有尾随空格。因为它通常是不可见的，所以会造成困惑：例如，后面跟着一个空格和换行符的反斜杠不算作换行标记。一些编辑器不保留它，许多项目（如 CPython 本身）都有预提交钩子来拒绝它。
 
 - 总是在这些二元运算符的两侧各加上一个空格：赋值（`=`），增量赋值（`+=`，`-=`等），比较（`==`，`<`，`>`，`！=`，`<>` ，`<=`，`>=`，`in`，`not in`，`is`，`is not`），布尔运算（`and`，`or`，`not`）。
 
@@ -597,11 +597,11 @@ x = x + 1                 # Compensate for border
 
 ### §7.3 文档字符串
 
-有关编写良好文档字符串的约定（又称“docstrings”）已在 [PEP 257](https://peps.python.org/pep-0257 "PEP 257 – Docstring Conventions") 中得到了规定。
+有关编写良好文档字符串的约定（又称“docstrings”）已在 [_PEP 257_](https://peps.python.org/pep-0257 "PEP 257 – Docstring Conventions") 中得到了规定。
 
 - 为所有公共模块、函数、类和方法编写文档字符串。非公共方法不需要文档字符串，但是应该有一条注释描述该方法的作用。此注释应出现在 `def` 行之后。
 
-- [PEP 257](https://peps.python.org/pep-0257 "PEP 257 – Docstring Conventions") 描述了良好的文档字符串约定。请注意，最重要的是，多行文档字符串结束的 `"""` 应该位于单独的一行上：
+- [_PEP 257_](https://peps.python.org/pep-0257 "PEP 257 – Docstring Conventions") 描述了良好的文档字符串约定。请注意，最重要的是，多行文档字符串结束的 `"""` 应该位于单独的一行上：
 
     ```python
     """Return a foobang
@@ -623,7 +623,7 @@ Python 库的命名约定有点混乱，因此我们永远不会完全保持一�
 ### §8.1 首要的命名原则
 
 对于用户而言，作为 API 公共部分可见的名称的命名方法应反映它的用法而不是它如何实现。
-  
+
 ### §8.2 描述型的命名样式
 
 现在有很多不同的命名样式。不讨论从函数的名字中是否能看出函数的用途是什么，人们总是可以准确说出它们正在使用的命名样式是什么。
@@ -668,7 +668,7 @@ X11 库将前导 X 用于其所有公共功能。在 Python 中，通常认为�
 
 #### §8.3.2 ASCII 兼容性
 
-标准库中使用的标识符必须与 [PEP 3131](https://peps.python.org/pep-3131 "PEP 3131 – Supporting Non-ASCII Identifiers") 的 [policy section](https://peps.python.org/pep-3131#policy-specification "PEP 3131 – Supporting Non-ASCII Identifiers § Policy Specification") 所述的 ASCII 兼容 。
+标准库中使用的标识符必须与 [_PEP 3131_](https://peps.python.org/pep-3131 "PEP 3131 – Supporting Non-ASCII Identifiers") 的 [policy section](https://peps.python.org/pep-3131#policy-specification "PEP 3131 – Supporting Non-ASCII Identifiers § Policy Specification") 所述的 ASCII 兼容 。
 
 #### §8.3.3 包和模块名
 
@@ -686,7 +686,7 @@ X11 库将前导 X 用于其所有公共功能。在 Python 中，通常认为�
 
 #### §8.3.5 类型变量名
 
-在 [PEP 484](https://peps.python.org/pep-0484 "PEP 484 – Type Hints") 中引入的类型变量的名称通常应使用 CapWords 的短名称样式，如 `T`，`AnyStr`，`Num`。建议将用于声明协变或逆变行为的变量后缀分别添加 `_co` 或 `_contra`：
+在 [_PEP 484_](https://peps.python.org/pep-0484 "PEP 484 – Type Hints") 中引入的类型变量的名称通常应使用 CapWords 的短名称样式，如 `T`，`AnyStr`，`Num`。建议将用于声明协变或逆变行为的变量后缀分别添加 `_co` 或 `_contra`：
 
 ```python
 from typing import TypeVar
@@ -711,7 +711,7 @@ KT_contra = TypeVar('KT_contra', contravariant=True)
 
 变量名称遵循与函数名称相同的约定。
 
-mixedCase 仅允许在已经存在该样式的情况下使用（例如threading.py），以保持向后兼容性。
+mixedCase 仅允许在已经存在该样式的情况下使用（例如 threading.py），以保持向后兼容性。
 
 #### §8.3.9 函数和方法的参数名
 
@@ -729,7 +729,7 @@ mixedCase 仅允许在已经存在该样式的情况下使用（例如threading.
 
 为避免名称与子类冲突，请使用两个前导下划线来调用 Python 的名称处理规则。
 
-Python 用类名来修饰这些名称：如果类 Foo 具有名为 `__a` 的属性，则 `Foo.__ a` 不能访问它。（坚持的用户仍然可以通过调用 `Foo._Foo__a` 来获得访问权限。）通常，双引号下划线仅应用于避免名称与设计为子类的类中的属性发生冲突。
+Python 用类名来修饰这些名称：如果类 `Foo` 具有名为 `__a` 的属性，则 `Foo.__ a` 不能访问它。（坚持的用户仍然可以通过调用 `Foo._Foo__a` 来获得访问权限。）通常，双引号下划线仅应用于避免名称与设计为子类的类中的属性发生冲突。
 
 注意：关于 ` __name` 的使用存在一些争议（请参见下文）。
 
@@ -755,7 +755,7 @@ Python 用类名来修饰这些名称：如果类 Foo 具有名为 `__a` 的属�
 
     注1：有关类方法的参数名称建议，请参见上面的参数名称建议。
 
-- 对于简单的公共数据属性，最好只公开属性名称，而不是使用复杂的访问器/修改器方法。请记住，在Python中提供了一条易于扩展的道路，如果您发现简单的数据属性需要增加功能性行为，则可以使用属性将功能实现隐藏在简单的数据属性访问语法之后。
+- 对于简单的公共数据属性，最好只公开属性名称，而不是使用复杂的访问器/修改器方法。请记住，在 Python 中提供了一条易于扩展的道路，如果您发现简单的数据属性需要增加功能性行为，则可以使用属性将功能实现隐藏在简单的数据属性访问语法之后。
 
     注1：尽量使功能行为无副作用，虽然缓存等副作用通常很好。
 
@@ -781,7 +781,7 @@ Python 用类名来修饰这些名称：如果类 Foo 具有名为 `__a` 的属�
 
 对于任何的接口，当它包含名称空间（包，模块或类），则该接口也被视为内部接口。
 
-作为 import 的名称，应始终以实现的细节为命名尺度。除非其他模块是被包含模块的 API 中明确文档化的一部分，否则其他模块不得依赖对此类导入名称的间接访问例如 `os.path` 或某个包从子模块中用于体现功能的 `__init__` 模块。
+作为 `import` 的名称，应始终以实现的细节为命名尺度。除非其他模块是被包含模块的 API 中明确文档化的一部分，否则其他模块不得依赖对此类导入名称的间接访问例如 `os.path` 或某个包从子模块中用于体现功能的 `__init__` 模块。
 
 ## §9 编程建议
 
@@ -809,7 +809,7 @@ Python 用类名来修饰这些名称：如果类 Foo 具有名为 `__a` 的属�
 
     为了最大程度地减少工作量， `functools.total_ordering()` 装饰器提供了一种生成缺少的比较方法的工具。
 
-    [PEP 207](https://peps.python.org/pep-0207 "PEP 207 – Rich Comparisons") 表明，交换律在 Python 中是默认假设存在的。因此，解释器可以将 `y > x` 与 `x < y` 交换，`y >= x` 与 `x <= y` 交换，并且可以交换 `x == y` 和 `x！= y` 的参数。`sort()` 和 `min()` 操作是被保证基于 `<` 运算符的，同时 `max()` 函数使用 `>` 运算符。但是，最好写完整所有六个操作，以避免混淆。
+    [_PEP 207_](https://peps.python.org/pep-0207 "PEP 207 – Rich Comparisons") 表明，交换律在 Python 中是默认假设存在的。因此，解释器可以将 `y > x` 与 `x < y` 交换，`y >= x` 与 `x <= y` 交换，并且可以交换 `x == y` 和 `x！= y` 的参数。`sort()` 和 `min()` 操作是被保证基于 `<` 运算符的，同时 `max()` 函数使用 `>` 运算符。但是，最好写完整所有六个操作，以避免混淆。
 
 - 始终使用 `def` 语句而不是将 lambda 表达式直接绑定到标识符的赋值语句
 
@@ -827,15 +827,15 @@ Python 用类名来修饰这些名称：如果类 Foo 具有名为 `__a` 的属�
 
 - 从 `Exception` 而不是 `BaseException` 派生异常。从 `BaseException` 直接继承的异常通常是不应该被捕获的异常。
 
-    设计异常层次结构基于代码_捕获_异常所需的区别而不是引发异常的位置。旨在以编程方式回答“出了什么问题？”而不仅仅是陈述“发生了某个问题”（请参阅 [PEP 3151](https://peps.python.org/pep-3151 "PEP 3151 – Reworking the OS and IO exception hierarchy")，以获取内置异常层次结构的学习示例）。
+    设计异常层次结构基于代码_捕获_异常所需的区别而不是引发异常的位置。旨在以编程方式回答“出了什么问题？”而不仅仅是陈述“发生了某个问题”（请参阅 [_PEP 3151_](https://peps.python.org/pep-3151 "PEP 3151 – Reworking the OS and IO exception hierarchy")，以获取内置异常层次结构的学习示例）。
 
     此处适用类命名约定，尽管如果异常是错误，则应将后缀“Error”添加到异常类中。用于非本地流控制或其他形式的信号传递的非错误异常不需要特殊的后缀。
 
 - 适当使用异常链接。应使用 `raise X from Y` 来表示显式替换而不会丢失原始的问题回溯。
 
-    在有意替换内部异常时（使用`raise X from None`），请确保将相关详细信息转移到新异常中（例如，在将 KeyError 转换为 AttributeError 时保留属性名称，或在新异常消息中嵌入原始异常的文本）。
+    在有意替换内部异常时（使用`raise X from None`），请确保将相关详细信息转移到新异常中（例如，在将 `KeyError` 转换为 `AttributeError` 时保留属性名称，或在新异常消息中嵌入原始异常的文本）。
 
-- 捕获异常时，请尽可能提及特定的异常，而不要使用空壳的`except:` 子句:
+- 捕获异常时，请尽可能提及特定的异常，而不要使用空壳的 `except:` 子句:
 
     ```python
     try:
@@ -844,7 +844,7 @@ Python 用类名来修饰这些名称：如果类 Foo 具有名为 `__a` 的属�
         platform_specific_module = None
     ```
 
-    一个裸露的 `except:` 子句将捕获 SystemExit 和 KeyboardInterrupt 异常，使使用 ctrl-C 更难以中断程序，并可能掩盖其他问题。如果您想捕获所有表示程序错误的异常，请使用 `except Exception:`（裸露的 except 等效于 `except BaseException:`）。
+    一个裸露的 `except:` 子句将捕获 `SystemExit` 和 `KeyboardInterrupt` 异常，使使用 `ctrl-C` 更难以中断程序，并可能掩盖其他问题。如果您想捕获所有表示程序错误的异常，请使用 `except Exception:`（裸露的 `except` 等效于 `except BaseException:`）。
 
     一个好的经验法则是将裸露异常子句的使用限制为两种情况：
 
@@ -891,7 +891,7 @@ Python 用类名来修饰这些名称：如果类 Foo 具有名为 `__a` 的属�
         do_stuff_in_transaction(conn)
     ```
 
-    错误的示例除了在 transaction 后关闭了链接，并没有提供任何信息来指定 `__enter__` 和 `__exit__`方法在做什么。明确的给出这类信息在这种情形下很关键。
+    错误的示例除了在 `transaction` 后关闭了链接，并没有提供任何信息来指定 `__enter__` 和 `__exit__`方法在做什么。明确的给出这类信息在这种情形下很关键。
 
 - 在 `return`-语句中，风格应保持一致。函数中的所有 `return`-语句应该返回一个表达式，或者都不返回。如果任何 `return`-语句返回一个表达式，则不返回任何值的任何 `return`-语句都应将其显式声明为 `return None`，并且在函数末尾（如果可以执行到）应存在一个显式 `return`-语句：
 
@@ -984,7 +984,7 @@ Python 用类名来修饰这些名称：如果类 Foo 具有名为 `__a` 的属�
     if greeting is True:
     ```
 
-- 在 `try...finally` 的 finally 语句中使用流程控制语句 `return`/`break`/`continue`，其中流程控制语句会跳出 finally 语句块的范围是不被鼓励的。这是因为这种语句将隐式取消通过 finally 语句块传播的任何活动异常：
+- 在 `try...finally` 的 `finally`-语句中使用流程控制语句 `return`/`break`/`continue`，其中流程控制语句会跳出 finally 语句块的范围是不被鼓励的。这是因为这种语句将隐式取消通过 `finally`-语句块传播的任何活动异常：
 
     ```python
     # Wrong:
@@ -997,13 +997,13 @@ Python 用类名来修饰这些名称：如果类 Foo 具有名为 `__a` 的属�
 
 ### §9.1 函数注释
 
-随着对 [PEP 484](https://peps.python.org/pep-0484 "PEP 484 – Type Hints") 的接受，函数注释的样式规则正在改变。
+随着对 [_PEP 484_](https://peps.python.org/pep-0484 "PEP 484 – Type Hints") 的接受，函数注释的样式规则正在改变。
 
-- 为了向前兼容，Python 3 代码中的函数注释最好应使用 [PEP 484](https://peps.python.org/pep-0484 "PEP 484 – Type Hints") 语法。（上一部分中对注释有一些格式建议。）
+- 为了向前兼容，Python 3 代码中的函数注释最好应使用 [_PEP 484_](https://peps.python.org/pep-0484 "PEP 484 – Type Hints") 语法。（上一部分中对注释有一些格式建议。）
 
-- 不再鼓励使用本 PEP 中先前建议的注释样式进行实验。
+- 不再鼓励使用本 _PEP_ 中先前建议的注释样式进行实验。
 
-- 但是，在 stdlib 之外， 现在鼓励在 [PEP 484](https://peps.python.org/pep-0484 "PEP 484 – Type Hints") 规则之内进行实验。例如，使用 [PEP 484](https://peps.python.org/pep-0484 "PEP 484 – Type Hints") 样式类型注释为大型第三方库或应用程序标记，你需要关注添加这些注释的难易程度，并观察它们的存在是否增加了代码的可理解性。
+- 但是，在 `stdlib` 之外， 现在鼓励在 [_PEP 484_](https://peps.python.org/pep-0484 "PEP 484 – Type Hints") 规则之内进行实验。例如，使用 [_PEP 484_](https://peps.python.org/pep-0484 "PEP 484 – Type Hints") 样式类型注释为大型第三方库或应用程序标记，你需要关注添加这些注释的难易程度，并观察它们的存在是否增加了代码的可理解性。
 
 - Python 标准库在采用此类注释时应保持保守，但允许将其用于新代码和大型重构。
 
@@ -1013,15 +1013,15 @@ Python 用类名来修饰这些名称：如果类 Foo 具有名为 `__a` 的属�
     # type: ignore
     ```
 
-     在文件顶部附近；这告诉类型检查器忽略所有注释。（在 [PEP 484](https://peps.python.org/pep-0484 "PEP 484 – Type Hints") 中可以找到更多的防止类型检查报问题的更细致的方法。）
+     在文件顶部附近；这告诉类型检查器忽略所有注释。（在 [_PEP 484_](https://peps.python.org/pep-0484 "PEP 484 – Type Hints") 中可以找到更多的防止类型检查报问题的更细致的方法。）
 
-- 像 linter 一样，类型检查器是可选的独立工具。默认情况下，Python 解释器不应由于类型检查而输出任何消息，也不应基于注释更改其行为。
+- 像 `linter` 一样，类型检查器是可选的独立工具。默认情况下，Python 解释器不应由于类型检查而输出任何消息，也不应基于注释更改其行为。
 
-- 不想使用类型检查器的用户可以随意忽略它们。但是，第三方库软件包的用户可能希望对那些软件包运行类型检查器。为此，[PEP 484](https://peps.python.org/pep-0484 "PEP 484 – Type Hints") 建议使用存根文件：`.pyi` 文件优先于相应的 `.py` 文件被类型检查器读取。存根文件可以与库一起分发，或通过 typeshed repo[^5] 单独分发（获得库作者的允许）。
+- 不想使用类型检查器的用户可以随意忽略它们。但是，第三方库软件包的用户可能希望对那些软件包运行类型检查器。为此，[_PEP 484_](https://peps.python.org/pep-0484 "PEP 484 – Type Hints") 建议使用存根文件：`.pyi` 文件优先于相应的 `.py` 文件被类型检查器读取。存根文件可以与库一起分发，或通过 typeshed repo[^5] 单独分发（获得库作者的允许）。
 
 ### §9.2 变量注释
 
-[PEP 526](https://peps.python.org/pep-0526 "PEP 526 – Syntax for Variable Annotations") 引入了变量注释。针对它们的样式建议与上述函数注释类似：
+[_PEP 526_](https://peps.python.org/pep-0526 "PEP 526 – Syntax for Variable Annotations") 引入了变量注释。针对它们的样式建议与上述函数注释类似：
 
 - 模块级变量，类和实例变量以及局部变量的注释应在冒号后面有一个空格。
 
@@ -1049,7 +1049,7 @@ Python 用类名来修饰这些名称：如果类 Foo 具有名为 `__a` 的属�
         result: int=0  # No spaces around equality sign
     ```
 
-- 尽管 [PEP 526](https://peps.python.org/pep-0526 "PEP 526 – Syntax for Variable Annotations") 已被 Python 3.6 接受，但变量注释语法是所有版本的 Python 上存根文件的首选语法（有关详细信息，请参见 [PEP 484](https://peps.python.org/pep-0484 "PEP 484 – Type Hints")）。
+- 尽管 [_PEP 526_](https://peps.python.org/pep-0526 "PEP 526 – Syntax for Variable Annotations") 已被 Python 3.6 接受，但变量注释语法是所有版本的 Python 上存根文件的首选语法（有关详细信息，请参见 [_PEP 484_](https://peps.python.org/pep-0484 "PEP 484 – Type Hints")）。
 
 脚注：
 
